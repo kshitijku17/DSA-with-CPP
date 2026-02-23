@@ -1,3 +1,5 @@
+// Making LinkedList using C++ with help of class 
+// Also insertatstart, insertatend, insertbefore
 #include <iostream>
 using namespace std;
 class Node{
