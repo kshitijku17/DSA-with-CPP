@@ -1,5 +1,5 @@
+// Stack using LinkendList
 #include <iostream>
-// #define TOS NULL;
 using namespace std;
 class Node{
     public:
