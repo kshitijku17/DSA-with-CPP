@@ -29,9 +29,14 @@ int main(){
     cout<<"PUSH output"<<endl;
     push(1);
     push(2);
+    push(9);
+    push(8);
     push(3);
     push(5);
     cout<<"POP output "<<endl;
+    pop();
+    pop();
+    pop();
     pop();
     pop();
     pop();

@@ -21,29 +21,34 @@ Node* TOS = nullptr;
             p->data = x;
             p->next = TOS;
             TOS = p;
+            cout<<p->data<<endl;
         }
     };
     int pop(){
         int y;
         if(TOS == NULL){
             cout<<"Stack underflow"<<endl;
-            //return;
         }
         else{
             y = TOS->data;
             Node* p= TOS;
             TOS = TOS->next;
             delete(p);
+            cout<<y<<endl;
             return y;
         }
     };
 
 int main (){
+    cout<<"PUSH output"<<endl;
     push(3);
     push(5);
     push(1);
     push(6);
-    cout<< pop()<<endl;
-    cout<< pop()<<endl;
-    cout<< pop()<<endl;
+    cout<<"POP output "<<endl;
+    pop();
+    pop();
+    pop();
+    pop();
+    pop();
 }
