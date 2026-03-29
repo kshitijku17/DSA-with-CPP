@@ -21,8 +21,8 @@ void display (){
     cout<<"NULL";
 
 };
-int count = 0;
 int len(){
+    int count = 0;
     Node* p = head;
     while(p!=NULL){
         count++;
@@ -32,7 +32,8 @@ int len(){
 };
 // Finding Mid value using Count 
 int midnormal(){
-    int mid = count/2;
+    int c = len();
+    int mid = c/2;
     Node* p = head;
     while(mid--){
         p = p->next;
@@ -62,25 +63,43 @@ void rev(){
     }
     head = prev;
 };
-
+Node* deleteatmid(){
+    if(head == NULL || head->next == nullptr){
+        return head;
+    }
+   int val = midnormal();
+    Node* p = head;
+    while(p->next->data!=val){
+        p = p->next;
+    }
+    Node* temp = p->next;
+    p->next = p->next->next;
+    delete temp;
+    return head;
+};
 int main (){
     head = new Node(10);
     Node* n1 = new Node(20);
     Node* n2 = new Node(30);
     Node* n3 = new Node(40);
     Node* n4 = new Node(50);
-    Node* n5 = new Node(60);
+    // Node* n5 = new Node(60);
     head ->next = n1;
     n1 ->next = n2;
     n2 ->next = n3;
     n3 ->next = n4;
-    n4 ->next = n5;
-    cout<<"Before swapping "<<endl;
+    //  n4 ->next = n5;
+    // cout<<"Before swapping "<<endl;
+    // display();
+    cout<<"Before deleteing "<<endl;
+    display();
+    cout<<"\nAfterdeleteing "<<endl;
+    deleteatmid();
     display();
 
-    cout<<"\nAfter swapping "<<endl;
-    rev();
-    display();
+    // cout<<"\nAfter swapping "<<endl;
+    // rev();
+    // display();
 
     // int k = len();
     // int c = midnormal();
