@@ -77,10 +77,25 @@ Node* deleteatmid(){
     delete temp;
     return head;
 };
+Node* deleterepeatingval(){
+    Node* p = head;
+    while(p != NULL && p->next != nullptr){
+        if(p->data == p->next->data){
+          Node* temp = p->next;
+          p->next = p->next->next;
+          delete temp;
+        }
+        else{
+            p = p->next;
+        }
+    }
+    return head;
+    
+};
 int main (){
     head = new Node(10);
-    Node* n1 = new Node(20);
-    Node* n2 = new Node(30);
+    Node* n1 = new Node(10);
+    Node* n2 = new Node(10);
     Node* n3 = new Node(40);
     Node* n4 = new Node(50);
     // Node* n5 = new Node(60);
@@ -93,8 +108,8 @@ int main (){
     // display();
     cout<<"Before deleteing "<<endl;
     display();
-    cout<<"\nAfterdeleteing "<<endl;
-    deleteatmid();
+    cout<<"\nAfter deleteing "<<endl;
+    deleterepeatingval();
     display();
 
     // cout<<"\nAfter swapping "<<endl;
